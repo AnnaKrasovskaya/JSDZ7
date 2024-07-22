@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
+    <title>To-Do-List</title>
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>Список задач</h1>
+        <form class="todo-form">
+          <input type="text" name="todoTask" placeholder="...Название задачи" />
+          <input
+            type="number"
+            min="1"
+            name="todoDate"
+            placeholder="...Количество дней на выполнение"
+          />
+          <select name="todoCategory">
+            <option value="">Выберите категорию</option>
+            <option value="Работа">Работа</option>
+            <option value="Домашние дела">Домашние дела</option>
+            <option value="Хобби">Хобби</option>
+          </select>
+          <button>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              fill="currentColor"
+              class="bi bi-plus"
+              viewBox="0 0 16 16"
+            >
+              <path
+                d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4"
+              />
+            </svg>
+          </button>
+        </form>
+      </header>
+      <main>
+        <ul class="todo-List"></ul>
+      </main>
+    </div>
+    <script src="./app.js"></script>
+  </body>
+</html>
