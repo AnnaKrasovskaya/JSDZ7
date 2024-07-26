@@ -1,4 +1,5 @@
 const form = document.querySelector(".todo-form");
+const list = document.querySelector(".todo-List");
 const { todoTask, todoDate, todoCategory } = form.elements;
 const tasks = [];
 form.addEventListener("submit", (event) => {
@@ -21,14 +22,25 @@ form.addEventListener("submit", (event) => {
 });
 
 function renderTasks(tasks) {
-  const list = document.querySelector(".todo-List");
   list.innerHTML = "";
   tasks.forEach((task) => {
     const listItem = document.createElement("li");
+
     listItem.classList.add("task");
-    listItem.innerHTML = `<span class = "name">${task.name}</span>
+    listItem.innerHTML = `<input type = "checkbox" class= "checkbox"/>
+    <span class = "name">${task.name}</span>
         <span class = "date">Количество дней на задачу:${task.days} </span>
-        <span class = "category">Категория: ${task.category} </span>`;
+        <span class = "category">Категория: ${task.category} </span> <button class ="delete">Удалить</button>`;
     list.append(listItem);
+
+    const tasksElements = list.querySelectorAll(".task");
+    tasksElements.forEach((element) => {
+      element.addEventListener("click", function (e) {
+        e.target.matches(".checkbox")
+          ? (element.style.background = "green")
+          : "";
+        e.target.matches(".delete") ? element.remove() : "";
+      });
+    });
   });
 }

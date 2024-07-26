@@ -35,6 +35,14 @@ button {
 button:hover {
   opacity: 0, 85;
 }
+.delete {
+  background: transparent;
+  border: 1px solid red;
+  color: black;
+}
+.checkbox {
+  max-width: 20px;
+}
 .todo-list {
   display: flex;
   flex-direction: column;
@@ -45,6 +53,6 @@ li {
   display: flex;
   align-items: center;
   padding: 10px;
-  background: rosybrown;
+  background: transparent;
   justify-content: space-between;
 }
